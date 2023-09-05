@@ -32,6 +32,10 @@ public class Actor {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
+	
+	public void actorName() {
+		System.out.println(firstName + " " + lastName);
+	}
 
 	public int getId() {
 		return id;
@@ -59,7 +63,7 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor ID: " + id + " " + firstName + " " + lastName + " Film: " + films;
+		return firstName + " " + lastName;
 	}
 
 	@Override

@@ -1,14 +1,66 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Film {
 	
 	private int id, releaseYear, languageID, rentalDuration, length ;
-	private String title, description, rating, specialFeatures;
+	private String title, description, rating, specialFeatures, language;
 	private double rentalRate, replacementCost;
+	private List<Actor> actors;
 	
+	public List<Actor> getActors() {
+		return actors;
+	}
+
+	public void setActors(List<Actor> actors) {
+		this.actors = actors;
+	}
+
+	public Film(int id, int releaseYear, String language, int languageID, int rentalDuration, int length, String title,
+			String description, String rating, String specialFeatures, double rentalRate, double replacementCost) {
+		super();
+		this.id = id;
+		this.releaseYear = releaseYear;
+		this.language = language;
+		this.languageID = languageID;
+		this.rentalDuration = rentalDuration;
+		this.length = length;
+		this.title = title;
+		this.description = description;
+		this.rating = rating;
+		this.specialFeatures = specialFeatures;
+		this.rentalRate = rentalRate;
+		this.replacementCost = replacementCost;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
 	public Film() {};
+	
+	public Film(int id, int releaseYear, String language, int languageID, int rentalDuration, int length, String title,
+			String description, String rating, String specialFeatures, double rentalRate, double replacementCost, List<Actor> actors) {
+		this.id = id;
+		this.releaseYear = releaseYear;
+		this.language = language;
+		this.languageID = languageID;
+		this.rentalDuration = rentalDuration;
+		this.length = length;
+		this.title = title;
+		this.description = description;
+		this.rating = rating;
+		this.specialFeatures = specialFeatures;
+		this.rentalRate = rentalRate;
+		this.replacementCost = replacementCost;
+		this.actors = actors;
+	}
 	
 	public Film(int id, int releaseYear, int languageID, int rentalDuration, int length, String title,
 			String description, String rating, String specialFeatures, double rentalRate, double replacementCost) {
@@ -24,6 +76,7 @@ public class Film {
 		this.rentalRate = rentalRate;
 		this.replacementCost = replacementCost;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -107,10 +160,8 @@ public class Film {
 	}
 	@Override
 	public String toString() {
-		return "Film ID " + id + " Released " + releaseYear + " Language ID: " + languageID + " Rental Duration: "
-				+ rentalDuration + " Length: " + length + " Title: " + title + " Description: " + description
-				+ " Rating: " + rating + " Special Features: " + specialFeatures + " Rental Rate: " + rentalRate
-				+ " Replacement Cost: " + replacementCost;
+		return "Film Title " + title + " Release Year: " + releaseYear + " Rated: " + rating + " Description: " + description + " Available In: " +
+	 language + " Staring: " + actors;
 	}
 	
 
